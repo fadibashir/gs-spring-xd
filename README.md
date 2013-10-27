@@ -7,6 +7,7 @@ What you'll need
 ----------------
 
  - About 15 minutes
+ - JDK 1.7 or later	
  
 How to complete this guide
 --------------------------
@@ -87,9 +88,13 @@ xd:>
 
 Inside Spring XD's shell create a twitter stream:
 
-    xd:> stream create --name twittersearchjava --definition "twittersearch --type=json --fixedDelay=1000 --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='java' | file"
-    
-> **Note:** In the next release after Spring XD M3, you won't have to write `--json=true` but instead `outputType=application/json`.
+    xd:> stream create --name twittersearchjava --definition "twittersearch --json=true --fixedDelay=1000 --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='java' | file"
+
+Here you are creating a **stream** which consists of a *source* and a *sink*.
+
+- The source is named **twittersearchjava**.
+- The source is **twittersearch**, output formatted as JSON, every 1000 milliseconds, querying on the token *java*.
+- The results are piped into the **file** sink, which defaults to **/tmp/xd/output/[streamName].out**
 
 In another terminal:
 
@@ -98,14 +103,11 @@ In another terminal:
 
 Spring XD is capturing live data from twitter about *java* and writing it to `twittersearchjava.out`. You should see something like this:
 
-```
-org.springframework.integration.x.twitter.XDTweet@5aa2b17f
-org.springframework.integration.x.twitter.XDTweet@42f2e263
-org.springframework.integration.x.twitter.XDTweet@2e78b34b
-org.springframework.integration.x.twitter.XDTweet@ef543046
-...
+```json
+"id":394549063997460480,"text":"Hello world, do u need an experienced #Java #Software #Developer? Contact me ASAP. I work as a freelancer and full time. BB pin: 23AD2DCE","createdAt":1382902801000,"fromUser":"thejdeveloper","profileImageUrl":"http://pbs.twimg.com/profile_images/378800000503045039/10ba9d12cdc8b130884e782bb9c999f9_normal.jpeg","toUserId":0,"inReplyToStatusId":null,"inReplyToUserId":null,"inReplyToScreenName":"null","fromUserId":584768355,"languageCode":"en","source":"<a href=\"http://blackberry.com/twitter\" rel=\"nofollow\">Twitter for BlackBerry®</a>","retweetCount":0,"retweeted":false,"retweetedStatus":null,"favorited":false,"entities":{"urls":[],"mentions":[],"media":[],"tickerSymbols":[],"hashTags":[{"text":"Java","indices":[38,43]},{"text":"Software","indices":[44,53]},{"text":"Developer","indices":[54,64]}]},"user":{"id":584768355,"screenName":"thejdeveloper","name":"Johnson Ayomide","url":"http://t.co/fLa7IYnE9f","profileImageUrl":"http://pbs.twimg.com/profile_images/378800000503045039/10ba9d12cdc8b130884e782bb9c999f9_normal.jpeg","description":"","location":"Nigeria","createdDate":1337428353000,"language":"en","statusesCount":1143,"friendsCount":76,"followersCount":90,"favoritesCount":0,"listedCount":1,"following":false,"followRequestSent":false,"notificationsEnabled":false,"verified":false,"geoEnabled":true,"contributorsEnabled":false,"translator":false,"timeZone":null,"utcOffset":0,"sidebarBorderColor":"C0DEED","sidebarFillColor":"DDEEF6","backgroundColor":"C0DEED","backgroundImageUrl":"http://abs.twimg.com/images/themes/theme1/bg.png","backgroundImageTiled":false,"textColor":"333333","linkColor":"0084B4","protected":false,"profileUrl":"http://twitter.com/thejdeveloper"},"retweet":false}
 ```
 
+That is a single tweet in [JSON](/understanding/JSON) format. The file actually contains many, but that would fill up this guide. And while Spring XD runs, the file sink will continue to grow as it accumulates more data.
     
 Summary
 -------

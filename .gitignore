@@ -8,3 +8,5 @@ Thumbs.db
 *~
 *.sublime-*
 
+tomcat*
+spring-shell.log
