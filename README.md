@@ -1,7 +1,7 @@
 What you'll build
 -----------------
 
-You'll set up [Spring XD (eXtreme Data)](https://github.com/spring-projects/spring-xd/wiki), create a tap to monitor a live twitter feed, and pipe it into a file.
+You'll set up [Spring XD (eXtreme Data)](https://github.com/spring-projects/spring-xd/wiki), create a stream to monitor a live twitter feed, and pipe it into a file.
 
 What you'll need
 ----------------
