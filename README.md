@@ -32,7 +32,7 @@ This installation script will provide extra information.
 <a name="initial"></a>
 Installing Spring XD
 --------------------
-Homebrew has a base set of "formulas" to install many tools. But it also comes with the ability to support 3rd party sets called "taps". Pivotal has a tap.
+Homebrew has a base set of "formulas" to install many tools. But it also comes with the ability to support 3rd party sets called "taps". Pivotal has a [tap](http://github.com/pivotal/homebrew-tap) that includes several tools including Spring XD.
 
     $ brew tap pivotal/tap && brew install springxd
     
