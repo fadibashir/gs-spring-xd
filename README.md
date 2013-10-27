@@ -104,8 +104,71 @@ In another terminal:
 Spring XD is capturing live data from twitter about *java* and writing it to `twittersearchjava.out`. You should see something like this:
 
 ```json
-"id":394549063997460480,"text":"Hello world, do u need an experienced #Java #Software #Developer? Contact me ASAP. I work as a freelancer and full time. BB pin: 23AD2DCE","createdAt":1382902801000,"fromUser":"thejdeveloper","profileImageUrl":"http://pbs.twimg.com/profile_images/378800000503045039/10ba9d12cdc8b130884e782bb9c999f9_normal.jpeg","toUserId":0,"inReplyToStatusId":null,"inReplyToUserId":null,"inReplyToScreenName":"null","fromUserId":584768355,"languageCode":"en","source":"<a href=\"http://blackberry.com/twitter\" rel=\"nofollow\">Twitter for BlackBerry®</a>","retweetCount":0,"retweeted":false,"retweetedStatus":null,"favorited":false,"entities":{"urls":[],"mentions":[],"media":[],"tickerSymbols":[],"hashTags":[{"text":"Java","indices":[38,43]},{"text":"Software","indices":[44,53]},{"text":"Developer","indices":[54,64]}]},"user":{"id":584768355,"screenName":"thejdeveloper","name":"Johnson Ayomide","url":"http://t.co/fLa7IYnE9f","profileImageUrl":"http://pbs.twimg.com/profile_images/378800000503045039/10ba9d12cdc8b130884e782bb9c999f9_normal.jpeg","description":"","location":"Nigeria","createdDate":1337428353000,"language":"en","statusesCount":1143,"friendsCount":76,"followersCount":90,"favoritesCount":0,"listedCount":1,"following":false,"followRequestSent":false,"notificationsEnabled":false,"verified":false,"geoEnabled":true,"contributorsEnabled":false,"translator":false,"timeZone":null,"utcOffset":0,"sidebarBorderColor":"C0DEED","sidebarFillColor":"DDEEF6","backgroundColor":"C0DEED","backgroundImageUrl":"http://abs.twimg.com/images/themes/theme1/bg.png","backgroundImageTiled":false,"textColor":"333333","linkColor":"0084B4","protected":false,"profileUrl":"http://twitter.com/thejdeveloper"},"retweet":false}
+{
+	"id":394549063997460480,
+	"text":"Hello world, do u need an experienced #Java #Software #Developer? Contact me ASAP. I work as a freelancer and full time. BB pin: 23AD2DCE","createdAt":1382902801000,
+	"fromUser":"thejdeveloper",
+	"profileImageUrl":"http://pbs.twimg.com/profile_images/378800000503045039/10ba9d12cdc8b130884e782bb9c999f9_normal.jpeg",
+	"toUserId":0,
+	"inReplyToStatusId":null,
+	"inReplyToUserId":null,
+	"inReplyToScreenName":"null",
+	"fromUserId":584768355,
+	"languageCode":"en",
+	"source":"<a href=\"http://blackberry.com/twitter\" rel=\"nofollow\">Twitter for BlackBerry®</a>",
+	"retweetCount":0,"retweeted":false,
+	"retweetedStatus":null,
+	"favorited":false,
+	"entities":{
+		"urls":[],
+		"mentions":[],
+		"media":[],
+		"tickerSymbols":[],
+		"hashTags":[
+			{"text":"Java","indices":[38,43]},
+			{"text":"Software","indices":[44,53]},
+			{"text":"Developer","indices":[54,64]}
+		]
+	},
+	"user":{
+		"id":584768355,
+		"screenName":"thejdeveloper",
+		"name":"Johnson Ayomide",
+		"url":"http://t.co/fLa7IYnE9f",
+		"profileImageUrl":"http://pbs.twimg.com/profile_images/378800000503045039/10ba9d12cdc8b130884e782bb9c999f9_normal.jpeg",
+		"description":"",
+		"location":"Nigeria",
+		"createdDate":1337428353000,
+		"language":"en",
+		"statusesCount":1143,
+		"friendsCount":76,
+		"followersCount":90,
+		"favoritesCount":0,
+		"listedCount":1,
+		"following":false,
+		"followRequestSent":false,
+		"notificationsEnabled":false,
+		"verified":false,
+		"geoEnabled":true,
+		"contributorsEnabled":false,
+		"translator":false,
+		"timeZone":null,
+		"utcOffset":0,
+		"sidebarBorderColor":"C0DEED",
+		"sidebarFillColor":"DDEEF6",
+		"backgroundColor":"C0DEED",
+		"backgroundImageUrl":"http://abs.twimg.com/images/themes/theme1/bg.png",
+		"backgroundImageTiled":false,
+		"textColor":"333333",
+		"linkColor":"0084B4",
+		"protected":false,
+		"profileUrl":"http://twitter.com/thejdeveloper"
+	},
+	"retweet":false
+}
 ```
+
+> **Note:** Actually, the JSON will be compacted and not displayed in a pretty format. This was altered for readability.
 
 That is a single tweet in [JSON](/understanding/JSON) format. The file actually contains many, but that would fill up this guide. And while Spring XD runs, the file sink will continue to grow as it accumulates more data.
     
