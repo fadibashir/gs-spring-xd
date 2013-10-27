@@ -6,11 +6,11 @@ Spring XD has hooks into Twitter. It also supports using Redis.
 
 * [Accessing Twitter Data][gs-accessing-twitter]
 * [Registering an Application with Twitter][gs-register-twitter]
-* [Messaging with Redis][gs-messaging-redis
+* [Messaging with Redis][gs-messaging-redis]
 
 [gs-accessing-twitter]: /guides/gs/accessing-twitter
 [gs-register-twitter]: /guides/gs/register-twitter
-[gs-messaging-redis]: /guides/gs/redis
+[gs-messaging-redis]: /guides/gs/messaging-redis
 
 ### Concepts and technologies
 
