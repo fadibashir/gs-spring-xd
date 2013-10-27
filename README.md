@@ -168,10 +168,10 @@ Spring XD is capturing live data from twitter about *java* and writing it to `tw
 }
 ```
 
+This is a single tweet in [JSON](/understanding/JSON) format. The file actually contains many tweets, but that would fill up the guide. And while Spring XD runs, the file sink will continue to grow as it accumulates more data.
+    
 > **Note:** Actually, the JSON will be compacted and not displayed in a pretty format. This was altered for readability.
 
-That is a single tweet in [JSON](/understanding/JSON) format. The file actually contains many, but that would fill up this guide. And while Spring XD runs, the file sink will continue to grow as it accumulates more data.
-    
 Summary
 -------
 
