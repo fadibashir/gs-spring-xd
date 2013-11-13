@@ -39,7 +39,7 @@ That's it! It might take a little bit of time to install.
 
 If you aren't using Homebrew or you're on a different platform:
 
-1. Download [Spring XD 1.0.0.M4](http://repo.spring.io/simple/libs-milestone-local/org/springframework/xd/spring-xd/1.0.0.M4/spring-xd-1.0.0.M4.zip).
+1. Download [Spring XD 1.0.0.M4](http://repo.spring.io/simple/libs-milestone-local/org/springframework/xd/spring-xd/1.0.0.M4/spring-xd-1.0.0.M4-dist.zip).
 2. Move it to your preferred folder and unzip it.
 3. Configure XD_HOME to point at that folder.
 
