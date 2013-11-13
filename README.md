@@ -12,31 +12,37 @@ What you'll need
 How to complete this guide
 --------------------------
 
-Like all Spring's [Getting Started guides](/guides/gs), you can start from scratch if you don't have Homebrew installed, or you can bypass that and jump right into setting up Spring XD.
+If you are on a Mac you can get some simple instructions to [install Homebrew](#scratch).
 
-To **start from scratch**, move on to [Installing Mac OS X Homebrew](#scratch).
-
-To **skip the basics**, jump ahead to [Installing Spring XD](#initial).
+If you don't have a Mac or you aren't interested in installing Homebrew, then you can skip that and jump right to [Installing Spring XD](#initial).
 
 <a name="scratch"></a>
-Installing Mac OS X Homebrew
-----------------------------
+Installing Homebrew
+-------------------
 There are several package managers available for Mac OS X, but one of the most popular is Homebrew. And we have strong support for Homebrew! If you haven't already, use these steps to set it up.
 
     $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
     
 This installation script will provide extra information.
 
-> **Note:** Do you have OS X Mavericks (10.9)? There is current work underway to make sure Homebrew supports this version of OS X. See https://github.com/mxcl/homebrew/wiki for more community support.
+Homebrew has a base set of "formulas" to install many tools. But it also comes with the ability to support 3rd party sets called "taps". Pivotal has a [tap](http://github.com/pivotal/homebrew-tap) that includes several tools including Spring XD, which you'll see in the next section.
 
 <a name="initial"></a>
 Installing Spring XD
 --------------------
-Homebrew has a base set of "formulas" to install many tools. But it also comes with the ability to support 3rd party sets called "taps". Pivotal has a [tap](http://github.com/pivotal/homebrew-tap) that includes several tools including Spring XD.
+
+If you are using a Mac with Homebrew, the process is pretty simple.
 
     $ brew tap pivotal/tap && brew install springxd
     
-It might take a little bit of time to install.
+That's it! It might take a little bit of time to install.
+
+If you aren't using Homebrew or you're on a different platform:
+
+1. Download [Spring XD 1.0.0.M4](http://repo.spring.io/simple/libs-milestone-local/org/springframework/xd/spring-xd/1.0.0.M4/spring-xd-1.0.0.M4.zip).
+2. Move it to your preferred folder and unzip it.
+3. Configure XD_HOME to point at that folder.
+
 
 Running Spring XD
 -----------------
@@ -60,7 +66,7 @@ You should see something like this:
 \____/| .__/|_|  |_|_| |_|\__, | \/   \/___/
       | |                  __/ |
       |_|                 |___/
-1.0.0.M3                         eXtreme Data
+1.0.0.M4                         eXtreme Data
 
 Using local mode JMX is disabled for XD components
 ```
@@ -81,20 +87,22 @@ This will produce a prompt:
       | |                  __/ |
       |_|                 |___/
 eXtreme Data
-1.0.0.M3 | Admin Server Target: http://localhost:8080
+1.0.0.M4 | Admin Server Target: http://localhost:8080
 Welcome to the Spring XD shell. For assistance hit TAB or type "help".
 xd:>
 ```
 
 Inside Spring XD's shell create a twitter stream:
 
-    xd:> stream create --name twittersearchjava --definition "twittersearch --json=true --fixedDelay=1000 --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='java' | file"
+    xd:> stream create --name twittersearchjava --definition "twittersearch --outputType=application/json --fixedDelay=1000 --consumerKey=afes2uqo6JAuFljdJFhqA --consumerSecret=0top8crpmd1MXGEbbgzAwVJSAODMcbeAbhwHXLnsg --query='java' | file"
 
 Here you are creating a **stream** which consists of a *source* and a *sink*.
 
 - The source is named **twittersearchjava**.
 - The source is **twittersearch**, output formatted as JSON, every 1000 milliseconds, querying on the token *java*.
 - The results are piped into the **file** sink, which defaults to **/tmp/xd/output/[streamName].out**
+
+> **Note:** This example shows the output being written as JSON. Spring XD supports many more formats for both inputs and outputs. Read more about this at https://github.com/spring-projects/spring-xd/wiki/Type-Conversion.
 
 In another terminal:
 
