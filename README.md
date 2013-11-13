@@ -7,7 +7,7 @@ What you'll need
 ----------------
 
  - About 15 minutes
- - JDK 1.6 or later, though JDK 1.7 is recommended
+ - JDK 1.6 or later
  
 How to complete this guide
 --------------------------
