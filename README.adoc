@@ -1,3 +1,7 @@
+---
+tags: []
+projects: [spring-xd]
+---
 :toc:
 :icons: font
 :source-highlighter: prettify
