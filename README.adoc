@@ -5,7 +5,7 @@ projects: [spring-xd]
 :toc:
 :icons: font
 :source-highlighter: prettify
-:appversion: 1.0.0.RC1
+:appversion: 1.0.0.RELEASE
 
 == What you'll build
 
