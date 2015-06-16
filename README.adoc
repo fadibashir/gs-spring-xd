@@ -5,17 +5,17 @@ projects: [spring-xd]
 :toc:
 :icons: font
 :source-highlighter: prettify
-:appversion: 1.0.0.RELEASE
+:appversion: 1.2.0.RELEASE
 
 == What you'll build
 
-You'll set up https://github.com/spring-projects/spring-xd/wiki[Spring XD (eXtreme Data)], create a stream to monitor a live twitter feed, and pipe it into a file.
+You'll set up http://spring.io/spring-xd[Spring XD (eXtreme Data)], create a stream to monitor a live twitter feed, and pipe it into a file.
 
 == What you'll need
 
  - About 15 minutes
  - JDK 1.7 or later
- 
+
 == How to complete this guide
 
 If you are on a Mac there are some simple instructions to <<scratch>>.
@@ -29,7 +29,7 @@ There are several package managers available for Mac OS X, but one of the most p
 ----
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ----
-    
+
 This installation script will provide extra information.
 
 Homebrew has a base set of "formulas" to install many tools. It also supports 3rd party sets called "taps". Pivotal has a http://github.com/pivotal/homebrew-tap[tap] that provides several tools including Spring XD, which you'll see in the next section.
@@ -42,7 +42,7 @@ If you are using a Mac with Homebrew, the process is pretty simple.
 ----
 brew tap pivotal/tap && brew install springxd
 ----
-    
+
 That's it! It might take a little bit of time to install.
 
 If you aren't using Homebrew or you're on a different platform:
@@ -56,9 +56,9 @@ To start Spring XD:
 ----
 $XD_INSTALL_DIR/xd/bin/xd-singlenode
 ----
-    
+
 NOTE: *singlenode* is Spring XD's simplest mode and more suited for demonstration purposes. See https://github.com/spring-projects/spring-xd/wiki for more options and details.
-    
+
 You should see something like this:
 
 [subs="attributes"]
@@ -82,7 +82,7 @@ In another terminal, start Spring XD's management shell:
 ----
 $XD_INSTALL_DIR/shell/bin/xd-shell
 ----
-    
+
 This will produce a prompt:
 
 [subs="attributes"]
