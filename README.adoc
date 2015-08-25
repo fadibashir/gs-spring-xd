@@ -123,3 +123,6 @@ Spring XD is capturing live data from twitter about *java* and writing it to `tw
 == Summary
 
 Congratulations! You've just installed Spring XD and created a stream to capture a live twitter feed and pipe it into a file.
+
+include::https://raw.githubusercontent.com/spring-guides/getting-started-macros/master/footer.adoc[]
+
